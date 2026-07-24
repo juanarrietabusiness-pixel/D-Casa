@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CONFIG } from "@/lib/config";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { WhatsAppIcon, InstagramIcon } from "@/components/icons";
+import { asset } from "@/lib/base";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -11,7 +12,7 @@ export function Footer() {
         <div className="footer__grid">
           <div className="footer__logo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/img/logo.svg" alt="D'CASA Panamá" width="240" height="104" />
+            <img src={asset("/assets/img/logo.svg")} alt="D'CASA Panamá" width="240" height="104" />
             <p>Muebles y todo para tu casa. Ordenado donde los demás son caóticos, cálido donde los demás son fríos, panameño donde los demás son genéricos.</p>
           </div>
           <div>

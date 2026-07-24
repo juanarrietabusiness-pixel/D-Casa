@@ -24,7 +24,10 @@ export const metadata = {
     images: [{ url: "/assets/img/og.png", width: 1200, height: 630 }],
   },
   twitter: { card: "summary_large_image" },
-  icons: { icon: "/assets/img/favicon.svg", apple: "/assets/img/favicon.svg" },
+  icons: {
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/img/favicon.svg`,
+    apple: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/img/favicon.svg`,
+  },
 };
 
 export const viewport = { themeColor: "#1648C0" };

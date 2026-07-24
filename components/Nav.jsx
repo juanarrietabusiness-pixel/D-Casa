@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { WhatsAppIcon, MenuIcon } from "@/components/icons";
+import { asset } from "@/lib/base";
 
 const LINKS = [
   { href: "/catalogo/", label: "Catálogo" },
@@ -34,7 +35,7 @@ export function Nav() {
       <div className="container nav__inner">
         <Link className="nav__logo" href="/" aria-label="D'CASA Panamá — inicio">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/img/logo.svg" alt="D'CASA Panamá" width="240" height="104" />
+          <img src={asset("/assets/img/logo.svg")} alt="D'CASA Panamá" width="240" height="104" />
         </Link>
         <nav className="nav__links" aria-label="Principal" id="menu">
           {LINKS.map((l) => (
