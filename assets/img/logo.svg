@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 104" role="img" aria-label="D'CASA Panamá">
+  <defs>
+    <clipPath id="plate"><rect x="2" y="2" width="236" height="100" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#plate)">
+    <rect x="0" y="0" width="240" height="72" fill="#1648C0"/>
+    <rect x="0" y="72" width="240" height="32" fill="#FFD000"/>
+  </g>
+  <rect x="7" y="7" width="226" height="90" rx="13" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+  <text x="120" y="53" text-anchor="middle" fill="#FFFFFF"
+        font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="700"
+        font-size="42" letter-spacing="0.5">D'CASA</text>
+  <text x="120" y="92" text-anchor="middle" fill="#1648C0"
+        font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="600"
+        font-size="15" letter-spacing="7">PANAMÁ</text>
+</svg>

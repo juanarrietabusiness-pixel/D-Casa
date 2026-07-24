@@ -1,0 +1,26 @@
+# D'CASA Panamá — configuración de despliegue (Netlify)
+# Sitio 100% estático: no hay paso de build, se publica la raíz.
+
+[build]
+  publish = "."
+
+# Cache largo para los assets con nombre estable
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Seguridad básica en todas las rutas
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Página 404 personalizada
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
