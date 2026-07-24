@@ -181,9 +181,16 @@ strong { font-weight: 600; color: var(--fg-strong); }
 }
 .kicker::before {
   content: ""; width: 1.4rem; height: 3px; border-radius: 2px;
+  background: var(--azul);
+}
+.on-brand .kicker::before,
+.page-head .kicker::before {
   background: var(--amarillo);
 }
-.on-brand .kicker { color: var(--blanco); }
+.on-brand .kicker,
+.page-head .kicker {
+  color: var(--blanco);
+}
 
 .lead { font-size: var(--fs-lg); line-height: 1.5; color: var(--fg); max-width: 42ch; }
 
@@ -613,11 +620,16 @@ a.card .card__arrow { margin-top: auto; color: var(--azul); font-weight: 700; di
   padding: 0.75rem 1.1rem; border-radius: var(--r-pill);
   box-shadow: var(--shadow-card);
   border: 2px solid var(--azul);
-  transition: transform var(--d-fast) var(--ease-out);
+  transition: transform var(--d-fast) var(--ease-out),
+              opacity var(--d-base) var(--ease-out);
 }
 .wa-float:hover { transform: translateY(-2px); }
 .wa-float svg { width: 22px; height: 22px; }
 @media (max-width: 520px) { .wa-float span { display: none; } .wa-float { padding: 0.85rem; } }
+/* Se oculta cerca del tope de página (choca con la cabecera) hasta que hay JS
+   para decidir cuándo mostrarlo; sin JS queda siempre visible. */
+.wa-float--hidden { opacity: 0; transform: translateY(12px) scale(0.94); pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .wa-float { transition: opacity var(--d-fast) linear; } .wa-float--hidden { transform: none; } }
 
 /* ---------- Migas de pan ---------- */
 .breadcrumb { font-size: var(--fs-xs); color: var(--muted); padding-top: var(--sp-6); }

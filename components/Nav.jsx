@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useScroll, useMotionValueEvent } from "framer-motion";
@@ -26,6 +26,14 @@ export function Nav() {
     setSolid(y > 24);
     setHidden(y > prev && y > 240 && !open);
   });
+
+  // Bloquea el scroll del fondo mientras el menú móvil está abierto.
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = "hidden";
+    return () => { document.documentElement.style.overflow = prev; };
+  }, [open]);
 
   const isActive = (href) => pathname === href;
   const cls = ["nav", hidden ? "nav--hidden" : "", solid ? "nav--solid" : ""].filter(Boolean).join(" ");

@@ -1,4 +1,7 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
+import { useScroll, useMotionValueEvent } from "framer-motion";
 import { CONFIG } from "@/lib/config";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { WhatsAppIcon, InstagramIcon } from "@/components/icons";
@@ -53,9 +56,19 @@ export function Footer() {
   );
 }
 
+// Cerca del tope, la placa de cabecera ya trae su propio WhatsApp: el flotante
+// espera a que el usuario baje para no taparla (choca sobre todo en mobile).
 export function WaFloat({ text = "Hola D'CASA, vi su página y quiero más información 👋" }) {
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(() => scrollY.get() < 420);
+  useMotionValueEvent(scrollY, "change", (y) => setHidden(y < 420));
+
   return (
-    <WhatsAppLink className="wa-float" text={text} aria-label="Escríbenos por WhatsApp">
+    <WhatsAppLink
+      className={"wa-float" + (hidden ? " wa-float--hidden" : "")}
+      text={text}
+      aria-label="Escríbenos por WhatsApp"
+    >
       <WhatsAppIcon /> <span>WhatsApp</span>
     </WhatsAppLink>
   );
