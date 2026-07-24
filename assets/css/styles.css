@@ -532,11 +532,51 @@ a.card .card__arrow { margin-top: auto; color: var(--azul); font-weight: 700; di
 .page-head .breadcrumb { color: rgba(255,255,255,0.75); }
 .page-head .breadcrumb a { color: var(--amarillo); }
 
-/* ---------- Reveal por scroll (sutil, opt-in) ----------
-   Solo se oculta si hay JS (.js en <html>). Sin JS, todo es visible. */
-.js [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity var(--d-slow) var(--ease-out), transform var(--d-slow) var(--ease-out); }
-.js [data-reveal].is-in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .js [data-reveal] { opacity: 1; transform: none; } }
+/* ---------- Reveal por scroll ----------
+   Se oculta solo cuando hay JS (.has-js). Sin JS o si el script no carga
+   (auto-unhide de seguridad), el contenido queda visible. GSAP anima;
+   .is-in fija el estado final. */
+.has-js [data-reveal],
+.has-js [data-reveal-group] > * { opacity: 0; }
+.has-js [data-reveal].is-in,
+.has-js [data-reveal-group] > *.is-in { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .has-js [data-reveal], .has-js [data-reveal-group] > * { opacity: 1 !important; transform: none !important; }
+}
+
+/* ---------- Nav: ocultar al bajar / sólido al hacer scroll ---------- */
+.nav { transition: transform var(--d-base) var(--ease-out), background var(--d-fast) var(--ease-out), box-shadow var(--d-fast) var(--ease-out); will-change: transform; }
+.nav--hidden { transform: translateY(-100%); }
+.nav--solid { box-shadow: 0 1px 0 var(--line), 0 10px 30px -24px rgba(14,42,107,0.45); }
+
+/* ---------- Hero: máscara de líneas para el reveal por palabras ---------- */
+.hero h1 .line { overflow: hidden; padding-bottom: 0.06em; }
+.hero h1 .word { display: inline-block; }
+
+/* ---------- Parallax ---------- */
+[data-parallax] { will-change: transform; }
+
+/* ---------- Micro-interacciones ---------- */
+a.card { position: relative; overflow: hidden; }
+a.card::before {
+  content: ""; position: absolute; left: 0; top: 0; height: 4px; width: 100%;
+  background: var(--amarillo); transform: scaleX(0); transform-origin: left;
+  transition: transform var(--d-base) var(--ease-out);
+}
+a.card:hover::before { transform: scaleX(1); }
+a.card .card__arrow svg, a.card .card__arrow { transition: transform var(--d-fast) var(--ease-out); }
+a.card:hover .card__arrow { transform: translateX(4px); }
+
+.value { transition: transform var(--d-base) var(--ease-out), border-color var(--d-base) var(--ease-out); }
+.value:hover { transform: translateY(-4px); border-color: var(--azul); }
+.value .icon-box { transition: transform var(--d-base) var(--ease-out); }
+.value:hover .icon-box { transform: rotate(-6deg) scale(1.05); }
+
+.frame { transition: transform var(--d-base) var(--ease-out); }
+.frame:hover { transform: translateY(-4px); }
+
+.btn .icon { transition: transform var(--d-fast) var(--ease-out); }
+.btn:hover .icon { transform: translateX(2px) scale(1.05); }
 
 /* ---------- Utilidades ---------- */
 .text-center { text-align: center; }

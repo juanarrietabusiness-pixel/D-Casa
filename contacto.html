@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>document.documentElement.classList.add("js");</script>
+  <script>(function(h){h.className+=" has-js";setTimeout(function(){h.classList.contains("motion-ready")||h.classList.remove("has-js");},2600);})(document.documentElement);</script>
   <title>Contacto y ubicación — D'CASA Panamá</title>
   <meta name="description" content="Escríbenos por WhatsApp o Instagram y te asesoramos con tu compra. Muebles y artículos para el hogar con entrega a todo Panamá.">
   <link rel="canonical" href="https://www.dcasa.com.pa/contacto.html">
@@ -208,7 +208,12 @@
     <span>WhatsApp</span>
   </a>
 
-  <script src="assets/js/config.js"></script>
+
+  <script src="assets/js/vendor/gsap.min.js" defer></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/vendor/lenis.min.js" defer></script>
+  <script src="assets/js/vendor/split-type.min.js" defer></script>
+  <script src="assets/js/config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -38,7 +38,13 @@
     "si": ["tu casa", "tu espacio", "quedó", "combina", "te dura", "te cabe", "fácil", "vale la pena", "te lo llevamos"],
     "no": ["precios de locura", "remate", "liquidación total", "¡¡¡CORRE!!!", "mayúsculas gritadas"]
   },
-  "motion": { "intensity": "baja", "smoothScroll": false, "pageTransitions": false },
+  "motion": {
+    "intensity": "media",
+    "smoothScroll": true,
+    "pageTransitions": false,
+    "libs": ["lenis", "gsap", "ScrollTrigger", "split-type"],
+    "principio": "Estilo gráfico plano; movimiento cinemático y sobrio. Un solo momento orquestado (el hero). Solo se anima transform/opacity. Respeta prefers-reduced-motion y funciona sin JS."
+  },
   "signature": "placa (marco blanco redondeado) como contenedor recurrente + banda inferior amarilla",
   "kitVersion": "estático-v1.0.0"
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>document.documentElement.classList.add("js");</script>
+  <script>(function(h){h.className+=" has-js";setTimeout(function(){h.classList.contains("motion-ready")||h.classList.remove("has-js");},2600);})(document.documentElement);</script>
   <title>D'CASA Panamá — Muebles y todo para tu casa</title>
   <meta name="description" content="Muebles y artículos para el hogar en Panamá, con precios claros y entrega a todo el país. Ordenado donde los demás son caóticos. Escríbenos por WhatsApp y te asesoramos.">
   <link rel="canonical" href="https://www.dcasa.com.pa/">
@@ -108,13 +108,13 @@
   <main id="main">
 
     <!-- ================= HERO ================= -->
-    <section class="hero on-brand" aria-labelledby="hero-title">
+    <section class="hero on-brand" data-hero aria-labelledby="hero-title">
       <div class="container hero__grid">
         <div>
-          <span class="kicker">Muebles y todo para tu casa · Panamá</span>
+          <span class="kicker" data-hero-el>Muebles y todo para tu casa · Panamá</span>
           <h1 id="hero-title">Tu casa, <span class="accent">ordenada</span> y sin gastar de más.</h1>
-          <p>El pana que sabe de casas. Precios claros, entrega a todo el país y un mueble que de verdad te cabe. Sin ruido, sin letras chiquitas.</p>
-          <div class="btn-row">
+          <p data-hero-el>El pana que sabe de casas. Precios claros, entrega a todo el país y un mueble que de verdad te cabe. Sin ruido, sin letras chiquitas.</p>
+          <div class="btn-row" data-hero-el>
             <a class="btn btn--primary" data-wa data-wa-text="Hola D'CASA, quiero que me asesoren para amoblar mi espacio 👋">
               <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.73 1.2h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.83 9.83 0 0 0 12.04 2Zm5.8 14.02c-.24.68-1.42 1.32-1.95 1.36-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.95-4.69-4.13-.14-.18-1.12-1.49-1.12-2.85 0-1.35.71-2.02.96-2.3.25-.27.55-.34.73-.34l.53.01c.17.01.4-.06.62.48.24.57.8 1.98.87 2.12.07.14.12.31.02.49-.09.18-.14.3-.28.46-.14.16-.29.36-.42.48-.14.14-.28.28-.12.55.16.27.72 1.18 1.55 1.92 1.06.95 1.95 1.24 2.22 1.38.27.14.43.12.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.61-.13.25.09 1.58.75 1.85.88.27.14.45.2.52.32.07.11.07.65-.17 1.32Z"/></svg>
               Escríbenos por WhatsApp
@@ -123,12 +123,12 @@
           </div>
         </div>
         <div class="hero__visual">
-          <div class="hero-plate">
+          <div class="hero-plate" data-hero-el>
             <span class="badge badge--yellow">Ordenado y accesible</span>
             <h2>Cálido donde los demás son fríos.</h2>
             <p>Fotos de hogares panameños reales, no showroom nórdico. Te decimos la verdad y te resolvemos.</p>
           </div>
-          <div class="hero-stats" role="list">
+          <div class="hero-stats" role="list" data-hero-el>
             <div class="stat" role="listitem"><b>Entrega</b><span>a todo el país</span></div>
             <div class="stat" role="listitem"><b>Asesoría</b><span>por WhatsApp</span></div>
             <div class="stat" role="listitem"><b>Pagos</b><span>a tu medida</span></div>
@@ -154,7 +154,7 @@
           <h2 id="valores-title">Accesible, y además ordenado.</h2>
           <p>Nadie en Panamá ocupa la casilla de precio amigable con las cosas bien puestas. Nosotros sí.</p>
         </div>
-        <div class="value-row">
+        <div class="value-row" data-reveal-group>
           <div class="value" data-reveal>
             <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h16"/></svg></div>
             <h3>Precios claros</h3>
@@ -182,7 +182,7 @@
           <h2 id="cat-title">Todo para tu espacio</h2>
           <p>Elige por ambiente. Cada mueble con su medida clara para que sepas si te cabe antes de comprar.</p>
         </div>
-        <div class="cards">
+        <div class="cards" data-reveal-group>
           <a class="card card--warm" href="catalogo.html#salas" data-reveal>
             <span class="card__num">01</span><h3>Salas</h3>
             <p>Sofás, seccionales y mesas de centro que aprovechan cada centímetro.</p>
@@ -228,7 +228,7 @@
             <a class="btn btn--brand" href="guias.html">Ver todas las guías</a>
           </div>
         </div>
-        <div class="tip-list" data-reveal>
+        <div class="tip-list" data-reveal-group>
           <div class="tip"><span class="n">1</span><div><h3>Mide el hueco, no el mueble</h3><p>Largo y fondo de la pared donde irá. Deja 20 cm de paso a cada lado para caminar cómodo.</p></div></div>
           <div class="tip"><span class="n">2</span><div><h3>Revisa la entrada</h3><p>Ancho de puertas y pasillos, y si hay escalera o ascensor. Un sofá con brazos delgados te da 20 cm de más.</p></div></div>
           <div class="tip"><span class="n">3</span><div><h3>Pásanos las medidas</h3><p>Nos escribes por WhatsApp con esos números y te decimos si te queda perfecto o cuál te conviene más.</p></div></div>
@@ -244,7 +244,7 @@
           <h2 id="amb-title">Así se ve en una casa de verdad</h2>
           <p>Espacios panameños reales, no render. Mismo mueble, tu espacio.</p>
         </div>
-        <div class="ambientes">
+        <div class="ambientes" data-reveal-group>
           <figure class="frame" data-reveal>
             <div class="frame__ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 20V9l9-6 9 6v11"/><path d="M9 20v-6h6v6"/></svg><span>Sala montada</span><small>Foto real de cliente — pendiente de sesión fotográfica</small></div>
             <figcaption class="frame__label"><b>Sala</b><span class="badge badge--outline">Ambiente</span></figcaption>
@@ -271,7 +271,7 @@
           <span class="kicker">Preguntas frecuentes</span>
           <h2 id="faq-title">Lo que todos preguntan</h2>
         </div>
-        <div class="faq" data-reveal>
+        <div class="faq" data-reveal-group>
           <details open>
             <summary>¿Hacen entregas a todo Panamá?<span class="plus" aria-hidden="true"></span></summary>
             <div class="faq__body"><p>Sí, llegamos a todo el país. Cuéntanos tu zona por WhatsApp y te decimos costo y fecha de entrega. ¿Para cuándo lo necesitas?</p></div>
@@ -366,7 +366,12 @@
     <span>WhatsApp</span>
   </a>
 
-  <script src="assets/js/config.js"></script>
+
+  <script src="assets/js/vendor/gsap.min.js" defer></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/vendor/lenis.min.js" defer></script>
+  <script src="assets/js/vendor/split-type.min.js" defer></script>
+  <script src="assets/js/config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
