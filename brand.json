@@ -1,0 +1,90 @@
+{
+  "brand": "dcasa-panama",
+  "family": "E-adaptada",
+  "notes": "Familia E (negocio local) del sistema ZERA, pero ADN propio de D'CASA: plano, ordenado, azul+amarillo. NO usa la estética editorial serif/terracota; el ADN de D'CASA la prohíbe explícitamente.",
+  "color": {
+    "azul": "#1648C0",
+    "amarillo": "#FFD000",
+    "blanco": "#FFFFFF",
+    "navy": "#0E2A6B",
+    "hueso": "#F7F4EF",
+    "arena": "#E8E2D9",
+    "nogal": "#8B5E3C",
+    "grafito": "#2B2E38",
+    "muted": "#565B66"
+  },
+  "proportion": {
+    "claro": 60,
+    "azul": 30,
+    "amarillo": 10
+  },
+  "rules": [
+    "El amarillo NUNCA toca el blanco directamente (contraste 1.47:1 = invisible).",
+    "CTAs = azul sobre amarillo (5.24:1 AA). Precios = amarillo sobre azul, dentro de placa.",
+    "Un solo acento cromático (amarillo). El azul es la masa de marca.",
+    "Cero degradados, cero sombras dramáticas, cero bordes de neón. El sistema es plano.",
+    "La 'placa' (marco blanco redondeado) es el dispositivo gráfico recurrente.",
+    "Composición: azul arriba (masa), amarillo abajo (base). El amarillo sostiene, no flota."
+  ],
+  "type": {
+    "display": "Oswald",
+    "displayFallback": [
+      "Archivo Narrow",
+      "Barlow Condensed",
+      "Anton"
+    ],
+    "body": "Inter",
+    "bodyFallback": [
+      "Barlow",
+      "Work Sans"
+    ],
+    "displayCase": "uppercase",
+    "displayWeight": 700,
+    "prohibited": [
+      "serif editorial",
+      "script",
+      "tipografías con bordes/sombras/degradados"
+    ]
+  },
+  "voice": {
+    "archetype": "El Amigo cercano + El Sabio práctico",
+    "traits": [
+      "Clara",
+      "Cálida y panameña",
+      "Útil antes que vendedora",
+      "Segura, nunca desesperada"
+    ],
+    "cta": "Escríbenos por WhatsApp",
+    "si": [
+      "tu casa",
+      "tu espacio",
+      "quedó",
+      "combina",
+      "te dura",
+      "te cabe",
+      "fácil",
+      "vale la pena",
+      "te lo llevamos"
+    ],
+    "no": [
+      "precios de locura",
+      "remate",
+      "liquidación total",
+      "¡¡¡CORRE!!!",
+      "mayúsculas gritadas"
+    ]
+  },
+  "motion": {
+    "intensity": "media",
+    "smoothScroll": true,
+    "pageTransitions": false,
+    "libs": [
+      "framer-motion",
+      "lenis"
+    ],
+    "principio": "Estilo gráfico plano; movimiento cinemático y sobrio. Un solo momento orquestado (el hero). Solo se anima transform/opacity. Respeta prefers-reduced-motion y funciona sin JS."
+  },
+  "signature": "placa (marco blanco redondeado) como contenedor recurrente + banda inferior amarilla",
+  "kitVersion": "next-v1.0.0",
+  "stack": "Next.js (static export) + framer-motion + Lenis"
+}

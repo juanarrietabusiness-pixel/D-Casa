@@ -1,0 +1,94 @@
+/* ============================================================
+   D'CASA PANAMÁ — tokens.css
+   Núcleo del sistema. Colores, escalas y ritmo extraídos del
+   ADN de marca (v3). NO improvises valores fuera de aquí.
+   ------------------------------------------------------------
+   Regla 60/30/10 · Amarillo NUNCA toca blanco directamente.
+   ============================================================ */
+
+:root {
+  /* ---------- COLOR DE MARCA (extraído del logo real) ---------- */
+  --azul:      #1648C0;  /* color madre · fondos de marca, placas */
+  --amarillo:  #FFD000;  /* acento y acción · CTAs, precios, banda base */
+  --blanco:    #FFFFFF;  /* aire, marcos de placa, texto sobre azul */
+  --navy:      #0E2A6B;  /* derivado · texto largo, pies de foto, profundidad */
+
+  /* ---------- NEUTROS CÁLIDOS (ambiente / fotografía) ---------- */
+  --hueso:     #F7F4EF;  /* fondo base de cards y secciones */
+  --arena:     #E8E2D9;  /* fondos alternos, separadores */
+  --nogal:     #8B5E3C;  /* madera real (solo en foto, no fondo plano) */
+  --grafito:   #2B2E38;  /* texto secundario, profundidad */
+
+  /* ---------- ROLES SEMÁNTICOS ---------- */
+  --bg:            var(--blanco);
+  --bg-warm:       var(--hueso);
+  --bg-warm-2:     var(--arena);
+  --bg-brand:      var(--azul);
+  --fg:            var(--grafito);   /* cuerpo sobre claro */
+  --fg-strong:     var(--navy);      /* titulares sobre claro */
+  --fg-on-brand:   var(--blanco);    /* texto sobre azul */
+  --muted:         #565B66;          /* gris ≥4.5:1 sobre hueso/blanco */
+  --line:          rgba(14, 42, 107, 0.14);
+  --line-on-brand: rgba(255, 255, 255, 0.22);
+  --accent:        var(--amarillo);
+  --accent-fg:     var(--azul);      /* azul sobre amarillo = 5.24:1 AA */
+
+  /* ---------- ESPACIADO (escala base 4) ---------- */
+  --sp-1: 0.25rem;  --sp-2: 0.5rem;   --sp-3: 0.75rem;  --sp-4: 1rem;
+  --sp-5: 1.25rem;  --sp-6: 1.5rem;   --sp-8: 2rem;     --sp-10: 2.5rem;
+  --sp-12: 3rem;    --sp-16: 4rem;    --sp-20: 5rem;    --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  --section-y:   clamp(3.5rem, 7vw, 7rem);
+  --block-gap:   clamp(1.5rem, 4vw, 3rem);
+
+  /* ---------- LAYOUT ---------- */
+  --gutter:    clamp(1.25rem, 5vw, 4rem);
+  --container: 78rem;   /* 1248px */
+  --narrow:    46rem;
+  --measure:   66ch;
+
+  /* ---------- TIPOGRAFÍA ---------- */
+  --font-display: "Oswald", "Arial Narrow", system-ui, sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --fs-mono:   0.75rem;                                       /* kickers 12px */
+  --fs-xs:     clamp(0.78rem, 0.76rem + 0.1vw, 0.85rem);
+  --fs-sm:     clamp(0.9rem, 0.87rem + 0.15vw, 0.97rem);
+  --fs-base:   clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --fs-lg:     clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --fs-xl:     clamp(1.6rem, 1.3rem + 1.4vw, 2.4rem);
+  --fs-2xl:    clamp(2.1rem, 1.6rem + 2.4vw, 3.4rem);
+  --fs-3xl:    clamp(2.6rem, 1.7rem + 4.2vw, 5rem);
+  --fs-hero:   clamp(3rem, 1.9rem + 5.6vw, 6.5rem);
+
+  --lh-tight: 0.98;  --lh-snug: 1.1;  --lh-body: 1.65;
+  --tr-display: 0.005em;
+  --tr-mono: 0.16em;   /* kickers en caja alta, muy abiertos */
+
+  /* ---------- FORMAS ---------- */
+  --hairline: 1px;
+  --r-sm: 6px;
+  --r-md: 14px;
+  --r-plate: 20px;     /* radio de la "placa" del logo */
+  --r-pill: 999px;
+  --plate-border: 3px; /* grosor del marco blanco de la placa */
+
+  /* ---------- SOMBRA (plana, muy sutil — el sistema es plano) ---------- */
+  --shadow-flat: 0 1px 0 var(--line);
+  --shadow-card: 0 12px 30px -22px rgba(14, 42, 107, 0.5);
+
+  /* ---------- MOVIMIENTO ---------- */
+  --d-fast: 0.18s;
+  --d-base: 0.4s;
+  --d-slow: 0.7s;
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+
+  /* ---------- CAPAS ---------- */
+  --z-nav: 100; --z-overlay: 1000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --d-fast: 0.01ms; --d-base: 0.01ms; --d-slow: 0.01ms; }
+}

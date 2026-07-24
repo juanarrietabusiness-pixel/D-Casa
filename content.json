@@ -1,0 +1,39 @@
+{
+  "_comment": "Fuente de verdad del contenido editable. Regla: un campo sin dato real se deja vacío o se elimina; NUNCA se rellena con inventos (precios, testimonios, cifras). Los datos de contacto reales viven en assets/js/config.js.",
+  "meta": {
+    "site": "D'CASA Panamá",
+    "domain": "https://www.dcasa.com.pa/",
+    "domainConfirmed": false,
+    "lang": "es",
+    "locale": "es_PA"
+  },
+  "brandStatement": "Ordenado donde los demás son caóticos, cálido donde los demás son fríos, panameño donde los demás son genéricos.",
+  "hero": {
+    "kicker": "Muebles y todo para tu casa · Panamá",
+    "h1": "Tu casa, ordenada y sin gastar de más.",
+    "sub": "El pana que sabe de casas. Precios claros, entrega a todo el país y un mueble que de verdad te cabe.",
+    "cta": "Escríbenos por WhatsApp"
+  },
+  "categorias": [
+    { "n": "01", "slug": "salas", "title": "Salas" },
+    { "n": "02", "slug": "comedores", "title": "Comedores" },
+    { "n": "03", "slug": "recamaras", "title": "Recámaras" },
+    { "n": "04", "slug": "colchones", "title": "Colchones" },
+    { "n": "05", "slug": "decoracion", "title": "Decoración" },
+    { "n": "06", "slug": "exteriores", "title": "Exteriores" }
+  ],
+  "faq": [
+    { "q": "¿Hacen entregas a todo Panamá?", "a": "Sí, llegamos a todo el país. Cuéntanos tu zona por WhatsApp y te decimos costo y fecha de entrega." },
+    { "q": "¿Cómo sé el precio de un mueble?", "a": "Escríbenos por WhatsApp con el mueble que te gustó y te pasamos el precio y la disponibilidad al momento." },
+    { "q": "¿Qué formas de pago manejan?", "a": "Manejamos varias formas de pago para que te acomodes. Escríbenos y te explicamos la que mejor te sirve." },
+    { "q": "¿Me ayudan a saber si el mueble me cabe?", "a": "Claro. Si nos pasas las medidas de tu espacio por WhatsApp, te decimos si te queda perfecto o cuál te conviene más." }
+  ],
+  "pendienteDelCliente": {
+    "whatsapp": "Número real de WhatsApp (formato 5076XXXXXXX) → ponerlo en assets/js/config.js",
+    "nap": "Dirección exacta, horario y enlace de Google Maps",
+    "fotos": "Sesión fotográfica de ambientes reales (salas, comedores, recámaras, exteriores, antes/después)",
+    "precios": "Definir si algún precio 'desde' se publica en el sitio o todo va por WhatsApp",
+    "testimonios": "Fotos + nombre + zona de clientes reales CON permiso, para la sección Comunidad",
+    "dominio": "Confirmar el dominio definitivo (se usó www.dcasa.com.pa como referencia)"
+  }
+}
