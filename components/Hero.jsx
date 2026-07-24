@@ -11,7 +11,8 @@ const h1Var = { hidden: {}, show: { transition: { staggerChildren: 0.045 } } };
 const wordUp = { hidden: { yPercent: 118 }, show: { yPercent: 0, transition: { duration: 0.85, ease: "easeOut" } } };
 const bandGrow = { hidden: { scaleX: 0 }, show: { scaleX: 1, transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1], delay: 0.5 } } };
 
-const TITLE = ["Tu", "casa,", "ordenada", "y", "sin", "gastar", "de", "más."];
+// Grupos que NO se parten (evitan viudas como una "y" sola al final de línea).
+const TITLE_GROUPS = [["Tu", "casa,"], ["ordenada"], ["y", "sin"], ["gastar"], ["de", "más."]];
 
 export function Hero() {
   return (
@@ -20,9 +21,13 @@ export function Hero() {
         <div>
           <motion.span className="kicker" variants={fadeUp}>Muebles y todo para tu casa · Panamá</motion.span>
           <motion.h1 id="hero-title" className="hero__title" variants={h1Var}>
-            {TITLE.map((w, i) => (
-              <span className="line-mask" key={i}>
-                <motion.span className={"word" + (w === "ordenada" ? " accent" : "")} variants={wordUp}>{w}</motion.span>
+            {TITLE_GROUPS.map((group, gi) => (
+              <span className="word-group" key={gi}>
+                {group.map((w, wi) => (
+                  <span className="line-mask" key={wi}>
+                    <motion.span className={"word" + (w === "ordenada" ? " accent" : "")} variants={wordUp}>{w}</motion.span>
+                  </span>
+                ))}
               </span>
             ))}
           </motion.h1>
@@ -31,7 +36,7 @@ export function Hero() {
             <WhatsAppLink className="btn btn--primary" text="Hola D'CASA, quiero que me asesoren para amoblar mi espacio 👋">
               <WhatsAppIcon /> Escríbenos por WhatsApp
             </WhatsAppLink>
-            <Link className="btn btn--ghost" href="/catalogo/">Ver catálogo</Link>
+            <Link className="btn-text-cta" href="/catalogo/">Ver catálogo <span aria-hidden="true">→</span></Link>
           </motion.div>
         </div>
         <div className="hero__visual">

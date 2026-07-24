@@ -40,7 +40,7 @@ export function Footer() {
             <ul role="list">
               <li><WhatsAppLink text="Hola D'CASA 👋">WhatsApp</WhatsAppLink></li>
               <li><a href={CONFIG.instagram} target="_blank" rel="noopener">Instagram {CONFIG.instagramHandle}</a></li>
-              <li><Link href="/contacto/">Ubicación y horario</Link></li>
+              <li><Link href="/contacto/#ubicacion">Ubicación y horario</Link></li>
             </ul>
           </div>
         </div>
@@ -61,7 +61,12 @@ export function Footer() {
 export function WaFloat({ text = "Hola D'CASA, vi su página y quiero más información 👋" }) {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(() => scrollY.get() < 420);
-  useMotionValueEvent(scrollY, "change", (y) => setHidden(y < 420));
+  useMotionValueEvent(scrollY, "change", (y) => {
+    const nearTop = y < 420;
+    const d = document.documentElement;
+    const nearBottom = d.scrollHeight - (y + window.innerHeight) < 180; // no tapar el footer
+    setHidden(nearTop || nearBottom);
+  });
 
   return (
     <WhatsAppLink

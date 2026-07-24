@@ -39,6 +39,8 @@ export function Nav() {
   const cls = ["nav", hidden ? "nav--hidden" : "", solid ? "nav--solid" : ""].filter(Boolean).join(" ");
 
   return (
+    <>
+    {open && <div className="nav__scrim" onClick={() => setOpen(false)} aria-hidden="true" />}
     <header className={cls} data-open={open ? "true" : "false"}>
       <div className="container nav__inner">
         <Link className="nav__logo" href="/" aria-label="D'CASA Panamá — inicio">
@@ -65,5 +67,6 @@ export function Nav() {
         </div>
       </div>
     </header>
+    </>
   );
 }

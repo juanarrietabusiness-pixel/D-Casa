@@ -1,9 +1,8 @@
-import { CONFIG, waHref } from "@/lib/config";
+import { waHref, waIsExternal } from "@/lib/config";
 
-// Enlace de WhatsApp con mensaje contextual. Si no hay número configurado,
-// cae a /contacto/. Determinista en build (no necesita 'use client').
+// Enlace de WhatsApp con mensaje contextual. Si no hay número aún, cae a Instagram.
 export function WhatsAppLink({ text, className, children, ...rest }) {
-  const external = !!CONFIG.whatsapp;
+  const external = waIsExternal;
   return (
     <a
       href={waHref(text)}

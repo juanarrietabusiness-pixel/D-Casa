@@ -5,7 +5,7 @@ export function Faq({ items = FAQ }) {
   return (
     <div className="faq">
       {items.map((f, i) => (
-        <details key={i} open={i === 0}>
+        <details key={i} name="faq-dcasa">
           <summary>{f.q}<span className="plus" aria-hidden="true" /></summary>
           <div className="faq__body"><p>{f.a}</p></div>
         </details>

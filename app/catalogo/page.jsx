@@ -44,7 +44,7 @@ export default function Catalogo() {
                     <span className="card__num">{it.tag}</span>
                     <h3>{it.title}</h3>
                     <p>{it.desc}</p>
-                    <span className="price-plate">Precio <small>al instante por WhatsApp</small></span>
+                    <span className="price-hint"><span className="price-hint__dot" aria-hidden="true" />Te pasamos el precio por WhatsApp</span>
                     <WhatsAppLink className="btn btn--ghost" text={it.wa}>Consultar este</WhatsAppLink>
                   </Item>
                 ))}

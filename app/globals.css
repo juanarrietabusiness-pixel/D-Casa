@@ -700,3 +700,66 @@ a.card:hover .card__arrow { transform: translateX(4px); }
 .hero__title .line-mask { display: inline-block; overflow: hidden; padding-bottom: 0.08em; }
 .hero__title .word { display: inline-block; }
 .hero__title .word.accent { color: var(--amarillo); }
+
+/* ============================================================
+   PASADA DE AUDITORÍA — jerarquía, profundidad sutil y arreglos
+   ============================================================ */
+
+/* Hero: grupos de palabras que no se parten (evita viudas) */
+.hero__title .word-group { display: inline-flex; white-space: nowrap; column-gap: 0.24em; }
+
+/* Hero: CTA secundario como enlace de texto (jerarquía clara vs el pill amarillo) */
+.btn-text-cta {
+  display: inline-flex; align-items: center; gap: 0.45em; min-height: 48px;
+  font-weight: 700; font-size: var(--fs-sm); color: var(--blanco);
+  background-image: linear-gradient(var(--amarillo), var(--amarillo));
+  background-size: 0% 2px; background-position: 0 100%; background-repeat: no-repeat;
+  transition: background-size var(--d-base) var(--ease-out);
+}
+.btn-text-cta:hover { background-size: 100% 2px; }
+.btn-text-cta span { transition: transform var(--d-fast) var(--ease-out); }
+.btn-text-cta:hover span { transform: translateX(3px); }
+
+/* Jerarquía tipográfica: los títulos de tarjeta descansan en Inter (no todo en caja alta).
+   Los H2 de sección siguen en Oswald mayúsculas: ese contraste ES la jerarquía. */
+.card h3, .value h3 {
+  font-family: var(--font-body); text-transform: none; letter-spacing: 0;
+  font-weight: 700; color: var(--fg-strong); line-height: 1.2;
+}
+.frame__label b { font-family: var(--font-body); text-transform: none; letter-spacing: 0; }
+
+/* Profundidad sutil (sin sombras dramáticas): las tarjetas se despegan del fondo */
+.card, .value { box-shadow: 0 10px 26px -20px rgba(14, 42, 107, 0.55); }
+
+/* Separación entre secciones claras: hairline de capa */
+.section--warm, .section--sand { border-top: var(--hairline) solid var(--line); }
+
+/* Corte tonal entre el CTA azul y el footer azul (motivo azul→amarillo de marca) */
+.footer { border-top: 4px solid var(--amarillo); }
+
+/* Hint de precio: ya NO simula un precio real (era una placa amarilla grande) */
+.price-hint {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  font-size: var(--fs-sm); font-weight: 600; color: var(--muted);
+}
+.price-hint__dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--amarillo); border: 1px solid var(--azul); flex: none; }
+
+/* Foco visible real en el formulario (regresión de accesibilidad corregida) */
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible {
+  outline: 3px solid var(--azul); outline-offset: 2px; border-bottom-color: var(--azul);
+}
+
+/* Scrim tras el menú móvil: el fondo deja de ser clicable */
+.nav__scrim {
+  position: fixed; inset: 68px 0 0 0; background: rgba(14, 42, 107, 0.45);
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+  z-index: calc(var(--z-nav) - 1);
+}
+@media (min-width: 861px) { .nav__scrim { display: none; } }
+
+/* Móvil angosto: "Entrega/Asesoría/Pagos" deja de comprimirse en 3 columnas */
+@media (max-width: 520px) {
+  .hero-stats { grid-template-columns: 1fr; gap: var(--sp-2); }
+  .hero-stats .stat { display: flex; align-items: baseline; gap: 0.5rem; border-left: 3px solid var(--amarillo); }
+  .hero-stats .stat b { display: inline; }
+}

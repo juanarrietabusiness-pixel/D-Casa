@@ -56,7 +56,7 @@ export default function Contacto() {
                   <a className="btn btn--ghost" href={CONFIG.instagram} target="_blank" rel="noopener">Seguir {CONFIG.instagramHandle}</a>
                 </div>
               </div>
-              <div className="plate--light plate" style={{ padding: "var(--sp-6)" }}>
+              <div className="plate--light plate" id="ubicacion" style={{ padding: "var(--sp-6)" }}>
                 <h3>Ubicación y horario</h3>
                 <p style={{ color: "var(--muted)" }}>Estamos afinando estos datos. Escríbenos por WhatsApp y con gusto te confirmamos dirección, horario y cómo llegar.</p>
               </div>
