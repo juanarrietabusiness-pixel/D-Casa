@@ -763,3 +763,19 @@ a.card:hover .card__arrow { transform: translateX(4px); }
   .hero-stats .stat { display: flex; align-items: baseline; gap: 0.5rem; border-left: 3px solid var(--amarillo); }
   .hero-stats .stat b { display: inline; }
 }
+
+/* ============================================================
+   FIX DE TILDES — aire para los acentos (Á, Í, Ó, Ñ) sin cambiar la fuente.
+   El interlineado muy ajustado hacía que la tilde tocara la línea de arriba;
+   en el hero, la máscara del reveal recortaba la tilde por arriba.
+   ============================================================ */
+h1, h2, h3, h4 { line-height: 1.12; }        /* espacio entre líneas para las tildes */
+.card h3, .value h3 { line-height: 1.2; }    /* (mantiene lo ya afinado en las tarjetas) */
+.page-head h1 { line-height: 1.14; }
+
+/* Hero: la máscara ya NO recorta la tilde (espacio superior) y algo más de aire */
+.hero__title { line-height: 1.08; }
+.hero__title .line-mask { padding-top: 0.2em; padding-bottom: 0; margin-top: -0.06em; }
+
+/* Placa del hero: separa el titular del badge para que la Á no lo toque */
+.hero-plate h2 { margin-top: 0.4em; }

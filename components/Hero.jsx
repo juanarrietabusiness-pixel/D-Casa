@@ -8,7 +8,7 @@ const EASE = [0.16, 1, 0.3, 1];
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.09, delayChildren: 0.12 } } };
 const fadeUp = { hidden: { opacity: 0, y: 26 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } } };
 const h1Var = { hidden: {}, show: { transition: { staggerChildren: 0.045 } } };
-const wordUp = { hidden: { yPercent: 118 }, show: { yPercent: 0, transition: { duration: 0.85, ease: "easeOut" } } };
+const wordUp = { hidden: { yPercent: 135 }, show: { yPercent: 0, transition: { duration: 0.85, ease: "easeOut" } } };
 const bandGrow = { hidden: { scaleX: 0 }, show: { scaleX: 1, transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1], delay: 0.5 } } };
 
 // Grupos que NO se parten (evitan viudas como una "y" sola al final de línea).
