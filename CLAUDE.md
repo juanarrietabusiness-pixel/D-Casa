@@ -7,20 +7,22 @@
 - **Objetivo principal del sitio:** conversaciones de WhatsApp (lead → asesoría → venta)
 - **ADN:** propio de D'CASA (v3), sobre estándares de producción del sistema ZERA (familia E adaptada)
 - **Signature:** la placa (marco blanco redondeado) como contenedor recurrente + banda inferior amarilla
-- **Arquitectura:** multipágina estática (HTML/CSS/JS, sin build)
-- **Versión:** estático-v1.0.0
+- **Arquitectura:** multipágina · Next.js static export (HTML por ruta)
+- **Versión:** next-v1.0.0
 
 ## Documentos de referencia
 
 1. `brand.json` — tokens de la marca. **Única fuente de verdad del estilo.**
 2. `content.json` — contenido editable + pendientes del cliente.
-3. `assets/js/config.js` — datos de contacto reales (WhatsApp, NAP, redes).
+3. `lib/config.js` — datos de contacto reales (WhatsApp, NAP, redes).
 4. `docs/DECISION.md` — qué se decidió y por qué.
 
 ## Stack
 
-HTML5 semántico · CSS con custom properties (tokens) · JavaScript vanilla (progressive enhancement).
-Sin framework, sin build. Despliegue: Netlify o cualquier hosting estático.
+Next.js 14 (App Router, `output: 'export'`) · framer-motion · Lenis · next/font/local.
+HTML estático por ruta. El design system vive en `app/globals.css` (tokens de marca).
+Despliegue: Netlify (build `npm run build`, publish `out`). La versión estática anterior
+queda en `legacy-static/` solo como referencia.
 
 ## Reglas innegociables (del ADN de D'CASA)
 
@@ -41,7 +43,7 @@ Sin framework, sin build. Despliegue: Netlify o cualquier hosting estático.
 ## Nunca
 
 - Añadir un segundo acento cromático o usar la estética serif/terracota (la prohíbe el ADN de D'CASA).
-- Hardcodear el número de WhatsApp o la dirección en el HTML: van en `assets/js/config.js`.
+- Hardcodear el número de WhatsApp o la dirección: van en `lib/config.js`.
 - Publicar testimonios anónimos o cifras sin fuente.
 - Gritar en mayúsculas en párrafos ni usar "remate/liquidación total/¡CORRE!".
 

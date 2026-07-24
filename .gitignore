@@ -1,12 +1,16 @@
-# Sistema operativo
+# dependencias
+node_modules/
+
+# build de Next
+.next/
+out/
+
+# sistema / editores
 .DS_Store
 Thumbs.db
-
-# Editores
 .vscode/
 .idea/
 *.swp
 
-# Node (por si se añade tooling opcional)
-node_modules/
-npm-debug.log*
+# scripts locales de captura
+shot.mjs
